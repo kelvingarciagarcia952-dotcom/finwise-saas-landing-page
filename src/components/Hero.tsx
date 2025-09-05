@@ -1,10 +1,6 @@
+// src/components/Hero.tsx
 import React from 'react';
 import Image from 'next/image';
-
-// Ya no necesitamos los botones de tienda ni los datos de heroDetails
-// import AppStoreButton from './AppStoreButton';
-// import PlayStoreButton from './PlayStoreButton';
-// import { heroDetails } from '@/data/hero';
 
 const Hero: React.FC = () => {
   return (
@@ -20,7 +16,6 @@ const Hero: React.FC = () => {
       <div className="absolute left-0 right-0 bottom-0 backdrop-blur-[2px] h-40 bg-gradient-to-b from-transparent via-[rgba(233,238,255,0.5)] to-[rgba(202,208,230,0.5)]" />
 
       <div className="text-center">
-        {/* Título y subtítulo estáticos en español */}
         <h1 className="text-4xl md:text-6xl md:leading-tight font-bold text-foreground max-w-lg md:max-w-2xl mx-auto">
           Kellgreat
         </h1>
@@ -28,21 +23,17 @@ const Hero: React.FC = () => {
           Conecta freelancers bloqueados con clientes, sin comisiones ocultas ni sorpresas.
         </p>
 
-        {/* Botón único de registro */}
         <div className="mt-6">
           <a
-            href="https://forms.gle/tu-enlace"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/gigs"
             className="px-8 py-3 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-700 transition"
           >
-            Registrarse
+            Explorar Gigs
           </a>
         </div>
 
-        {/* Imagen central intacta (si quieres cambiarla, ajusta la src manualmente) */}
         <Image
-          src="/images/hero-mockup.png"    // o usa heroDetails.centerImageSrc si actualizas heroDetails
+          src="/images/hero-mockup.png"
           width={384}
           height={340}
           quality={100}
