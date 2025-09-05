@@ -11,12 +11,39 @@ interface Gig {
   description: string;
   price: string;
   category: string;
+  username: string;
+  network: string;
 }
 
+// Tus ejemplos estáticos ahora incluyen username y network
 const staticGigs: Gig[] = [
-  { id: '1', title: 'Diseño de logo', description: 'Logo profesional en 24h.', price: '10 USDT', category: 'Diseño Gráfico' },
-  { id: '2', title: 'Desarrollo Web', description: 'Landing page en Next.js.', price: '20 USDT', category: 'Desarrollo Web' },
-  { id: '3', title: 'Gestión de redes', description: 'Plan mensual de community manager.', price: '15 USDT', category: 'Marketing Digital' },
+  {
+    id: '1',
+    title: 'Diseño de logo',
+    description: 'Logo profesional en 24h.',
+    price: '10',
+    category: 'Diseño Gráfico',
+    username: 'Admin',
+    network: 'USDT (TRC20)',
+  },
+  {
+    id: '2',
+    title: 'Desarrollo Web',
+    description: 'Landing page en Next.js.',
+    price: '20',
+    category: 'Desarrollo Web',
+    username: 'Admin',
+    network: 'USDT (TRC20)',
+  },
+  {
+    id: '3',
+    title: 'Gestión de redes',
+    description: 'Plan mensual de community manager.',
+    price: '15',
+    category: 'Marketing Digital',
+    username: 'Admin',
+    network: 'USDT (TRC20)',
+  },
 ];
 
 export default function GigDetailPage() {
@@ -43,9 +70,18 @@ export default function GigDetailPage() {
   return (
     <div className="max-w-2xl mx-auto py-10 px-6 space-y-4">
       <h1 className="text-3xl font-bold">{gig.title}</h1>
+
+      <p className="text-sm text-gray-500">
+        Publicado por {gig.username}
+      </p>
+
       <p className="text-sm text-gray-500">{gig.category}</p>
-      <p className="mt-4">{gig.description}</p>
-      <span className="block mt-6 text-xl font-semibold">{gig.price}</span>
+
+      <p className="mt-4 text-gray-700">{gig.description}</p>
+
+      <span className="block mt-6 text-xl font-semibold">
+        {gig.price} {gig.network}
+      </span>
 
       <div className="mt-8 flex flex-wrap gap-4">
         <button
