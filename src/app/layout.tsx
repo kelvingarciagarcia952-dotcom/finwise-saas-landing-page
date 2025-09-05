@@ -9,11 +9,9 @@ import { siteDetails } from "@/data/siteDetails";
 
 import "./globals.css";
 
-// Configuración de fuentes
 const manrope = Manrope({ subsets: ["latin"] });
 const sourceSans = Source_Sans_3({ subsets: ["latin"] });
 
-// Metadatos para <head>
 export const metadata: Metadata = {
   title: siteDetails.metadata.title,
   description: siteDetails.metadata.description,
@@ -49,20 +47,20 @@ export default function RootLayout({
       <body
         className={`${manrope.className} ${sourceSans.className} antialiased flex flex-col min-h-screen`}
       >
-        {/* Google Analytics */}
         {siteDetails.googleAnalyticsId && (
           <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />
         )}
 
-        {/* Header global con logo y botón de perfil */}
+        {/* Header global (asegúrate de que internamente use `position: fixed` y un z-index alto) */}
         <Header />
 
-        {/* Contenido principal */}
-        <main className="flex-grow">{children}</main>
+        {/* Empuja el contenido hacia abajo para que no quede tapado */}
+        <main className="flex-grow pt-16">
+          {children}
+        </main>
 
-        {/* Footer global */}
         <Footer />
       </body>
     </html>
   );
-    }
+}
