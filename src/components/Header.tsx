@@ -1,3 +1,4 @@
+// src/components/Header.tsx
 'use client';
 
 import Link from 'next/link';
@@ -5,67 +6,82 @@ import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
 import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
 import { FaFingerprint, FaUser } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const path = usePathname();
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const menuItems = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Gigs', href: '/gigs' },
+    { label: 'Chat', href: '/chat' },
+    { label: 'Perfil', href: '/profile', icon: <FaUser className="w-5 h-5 mr-1" /> },
+  ];
+
+  const linkBase = 'transition-colors';
+  const desktopLink = (href: string) =>
+    `${linkBase} ${
+      path === href
+        ? 'text-indigo-600 font-semibold'
+        : 'text-foreground hover:text-foreground-accent'
+    }`;
+
+  const mobileLink = (href: string) =>
+    `block ${
+      path === href
+        ? 'text-indigo-600 font-semibold'
+        : 'text-foreground hover:text-primary'
+    }`;
+
   return (
-    <header className="bg-transparent fixed top-0 left-0 right-0 z-50 w-full">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white shadow-md">
       <Container className="!px-0">
-        <nav className="flex justify-between items-center bg-white md:bg-transparent shadow-md md:shadow-none py-2 px-5 md:py-10">
-          
+        <nav className="flex justify-between items-center py-2 px-5 md:py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <FaFingerprint className="text-foreground w-7 h-7" />
-            <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
+            <span className="manrope text-xl font-semibold text-foreground">
               {siteDetails.siteName}
             </span>
           </Link>
 
-          {/* Menú escritorio */}
+          {/* Desktop menu */}
           <ul className="hidden md:flex space-x-6 items-center">
-            <li>
-              <Link href="/" className="text-foreground hover:text-foreground-accent transition-colors">
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <Link href="/gigs" className="text-foreground hover:text-foreground-accent transition-colors">
-                Gigs
-              </Link>
-            </li>
-            <li>
-              <Link href="/chat" className="text-foreground hover:text-foreground-accent transition-colors">
-                Chat
-              </Link>
-            </li>
-            <li>
-              <Link href="/profile" className="flex items-center text-foreground hover:text-foreground-accent transition-colors">
-                <FaUser className="w-5 h-5 mr-1" />
-                Perfil
-              </Link>
-            </li>
+            {menuItems.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className={desktopLink(item.href)}>
+                  {item.icon && <>{item.icon}</>}
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
 
-          {/* Botón móvil */}
+          {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
             type="button"
-            className="md:hidden bg-primary text-black focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
+            className="md:hidden bg-primary text-black rounded-full w-10 h-10 flex items-center justify-center focus:outline-none"
             aria-controls="mobile-menu"
             aria-expanded={isOpen}
           >
-            {isOpen ? <HiOutlineXMark className="w-6 h-6" /> : <HiBars3 className="w-6 h-6" />}
+            {isOpen ? (
+              <HiOutlineXMark className="w-6 h-6" />
+            ) : (
+              <HiBars3 className="w-6 h-6" />
+            )}
             <span className="sr-only">Toggle navigation</span>
           </button>
         </nav>
       </Container>
 
-      {/* Menú móvil */}
+      {/* Mobile menu */}
       <Transition
         show={isOpen}
         enter="transition ease-out duration-200 transform"
@@ -77,27 +93,18 @@ const Header: React.FC = () => {
       >
         <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
           <ul className="flex flex-col space-y-4 pt-4 pb-6 px-6">
-            <li>
-              <Link href="/" onClick={toggleMenu} className="block text-foreground hover:text-primary">
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <Link href="/gigs" onClick={toggleMenu} className="block text-foreground hover:text-primary">
-                Gigs
-              </Link>
-            </li>
-            <li>
-              <Link href="/chat" onClick={toggleMenu} className="block text-foreground hover:text-primary">
-                Chat
-              </Link>
-            </li>
-            <li>
-              <Link href="/profile" onClick={toggleMenu} className="flex items-center block text-foreground hover:text-primary">
-                <FaUser className="w-5 h-5 mr-1" />
-                Perfil
-              </Link>
-            </li>
+            {menuItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  onClick={toggleMenu}
+                  className={mobileLink(item.href)}
+                >
+                  {item.icon && <>{item.icon}</>}
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </Transition>
