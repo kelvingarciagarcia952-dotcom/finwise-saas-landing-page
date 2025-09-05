@@ -14,15 +14,15 @@ const config: Config = {
         foreground: "var(--foreground)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
-
         "primary-accent": "var(--primary-accent)",
         "foreground-accent": "var(--foreground-accent)",
         "hero-background": "var(--hero-background)",
 
-        // Nuevos colores personalizados
+        // Paleta extendida
         neonGreen: "#39FF14",
         lavenderBlue: "#E0D7FF",
         menuBlack: "#000000",
+        navyBlue: "#001F54",     // fondo azul marino para la interfaz
       },
     },
   },
