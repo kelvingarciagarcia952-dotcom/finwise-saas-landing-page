@@ -13,7 +13,6 @@ interface Gig {
   category: string;
 }
 
-// Repite aquí tus datos estáticos o impórtalos si los tienes en un módulo
 const staticGigs: Gig[] = [
   { id: '1', title: 'Diseño de logo', description: 'Logo profesional en 24h.', price: '10 USDT', category: 'Diseño Gráfico' },
   { id: '2', title: 'Desarrollo Web', description: 'Landing page en Next.js.', price: '20 USDT', category: 'Desarrollo Web' },
@@ -48,20 +47,28 @@ export default function GigDetailPage() {
       <p className="mt-4">{gig.description}</p>
       <span className="block mt-6 text-xl font-semibold">{gig.price}</span>
 
-      <div className="mt-8 flex gap-4">
+      <div className="mt-8 flex flex-wrap gap-4">
         <button
           onClick={() => router.back()}
           className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
         >
           ← Volver
         </button>
+
         <Link
           href="/gigs"
           className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
         >
           Ir a Gigs
         </Link>
+
+        <Link
+          href={`/chat/${gig.id}`}
+          className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+        >
+          Contactar
+        </Link>
       </div>
     </div>
   );
-    }
+}
