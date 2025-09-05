@@ -1,4 +1,4 @@
-import Hero from "@/components/Kellgreat";
+import Hero from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing/Pricing";
 import FAQ from "@/components/FAQ";
@@ -12,7 +12,7 @@ import CTA from "@/components/CTA";
 const HomePage: React.FC = () => {
   return (
     <>
-      <Kellgreat />
+      <Features />
       <Logos />
       <Container>
         <Benefits />
