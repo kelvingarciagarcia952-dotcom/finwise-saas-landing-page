@@ -19,8 +19,8 @@ const HomePage: React.FC = () => {
 
         <Section
           id="pricing"
-          title="Pricing"
-          description="Simple, transparent pricing. No surprises."
+          title="Kellgreat"
+          description="Una sola cuota mensual fija. Sin comisiones ocultas."
         >
           <Pricing />
         </Section>
