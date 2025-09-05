@@ -49,52 +49,57 @@ export default function NewGigPage() {
 
   return (
     <div className="max-w-xl mx-auto py-10 px-6">
-      <h1 className="text-3xl font-semibold mb-6">Publicar un Gig</h1>
+      {/* Título */}
+      <h1 className="text-3xl font-semibold mb-6 text-white">
+        Publicar un Gig
+      </h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Título */}
+        {/* Título del Gig */}
         <div>
-          <label className="block mb-1">Título</label>
+          <label className="block mb-1 text-white">Título</label>
           <input
             type="text"
             required
             value={title}
             onChange={e => setTitle(e.target.value)}
-            className="w-full border rounded px-3 py-2"
+            className="w-full border rounded px-3 py-2 bg-white text-black placeholder-gray-500"
+            placeholder="Escribe un título"
           />
         </div>
 
         {/* Descripción */}
         <div>
-          <label className="block mb-1">Descripción</label>
+          <label className="block mb-1 text-white">Descripción</label>
           <textarea
             required
             value={description}
             onChange={e => setDescription(e.target.value)}
-            className="w-full border rounded px-3 py-2 h-24"
+            className="w-full border rounded px-3 py-2 h-24 bg-white text-black placeholder-gray-500"
+            placeholder="Describe tu servicio"
           />
         </div>
 
         {/* Precio */}
         <div>
-          <label className="block mb-1">Precio</label>
+          <label className="block mb-1 text-white">Precio</label>
           <input
             type="text"
             required
             placeholder="p. ej. 25"
             value={price}
             onChange={e => setPrice(e.target.value)}
-            className="w-full border rounded px-3 py-2"
+            className="w-full border rounded px-3 py-2 bg-white text-black placeholder-gray-500"
           />
         </div>
 
         {/* Categoría */}
         <div>
-          <label className="block mb-1">Categoría</label>
+          <label className="block mb-1 text-white">Categoría</label>
           <select
             value={category}
             onChange={e => setCategory(e.target.value)}
-            className="w-full border rounded px-3 py-2"
+            className="w-full border rounded px-3 py-2 bg-white text-black"
           >
             {gigCategories.map(cat => (
               <option key={cat} value={cat}>
@@ -106,11 +111,11 @@ export default function NewGigPage() {
 
         {/* Criptomoneda */}
         <div>
-          <label className="block mb-1">Criptomoneda</label>
+          <label className="block mb-1 text-white">Criptomoneda</label>
           <select
             value={network}
             onChange={e => setNetwork(e.target.value)}
-            className="w-full border rounded px-3 py-2"
+            className="w-full border rounded px-3 py-2 bg-white text-black"
           >
             {gigNetworks.map(net => (
               <option key={net} value={net}>
@@ -130,4 +135,4 @@ export default function NewGigPage() {
       </form>
     </div>
   )
-      }
+          }
