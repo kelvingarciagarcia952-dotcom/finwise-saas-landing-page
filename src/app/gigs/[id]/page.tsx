@@ -15,7 +15,6 @@ interface Gig {
   network: string;
 }
 
-// Tus ejemplos estáticos ahora incluyen username y network
 const staticGigs: Gig[] = [
   {
     id: '1',
@@ -55,7 +54,7 @@ export default function GigDetailPage() {
     const stored = localStorage.getItem('userGigs');
     const userGigs: Gig[] = stored ? JSON.parse(stored) : [];
     const allGigs = [...userGigs, ...staticGigs];
-    const found = allGigs.find(g => g.id === id);
+    const found = allGigs.find((g) => g.id === id);
     if (!found) {
       router.push('/gigs');
     } else {
@@ -64,47 +63,53 @@ export default function GigDetailPage() {
   }, [id, router]);
 
   if (!gig) {
-    return <div className="p-6 text-center">Cargando gig…</div>;
+    return (
+      <div className="p-6 text-center text-white">
+        Cargando gig…
+      </div>
+    );
   }
 
   return (
-    <div className="max-w-2xl mx-auto py-10 px-6 space-y-4">
-      <h1 className="text-3xl font-bold">{gig.title}</h1>
+    <div className="max-w-2xl mx-auto py-10 px-6">
+      <div className="bg-white text-black rounded-lg p-6 space-y-4">
+        <h1 className="text-3xl font-bold">{gig.title}</h1>
 
-      <p className="text-sm text-gray-500">
-        Publicado por {gig.username}
-      </p>
+        <p className="text-sm text-gray-500">
+          Publicado por {gig.username}
+        </p>
 
-      <p className="text-sm text-gray-500">{gig.category}</p>
+        <p className="text-sm text-gray-500">{gig.category}</p>
 
-      <p className="mt-4 text-gray-700">{gig.description}</p>
+        <p className="mt-4 text-gray-700">{gig.description}</p>
 
-      <span className="block mt-6 text-xl font-semibold">
-        {gig.price} {gig.network}
-      </span>
+        <span className="block mt-6 text-xl font-semibold">
+          {gig.price} {gig.network}
+        </span>
 
-      <div className="mt-8 flex flex-wrap gap-4">
-        <button
-          onClick={() => router.back()}
-          className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
-        >
-          ← Volver
-        </button>
+        <div className="mt-8 flex flex-wrap gap-4">
+          <button
+            onClick={() => router.back()}
+            className="px-4 py-2 bg-gray-200 text-black rounded hover:bg-gray-300"
+          >
+            ← Volver
+          </button>
 
-        <Link
-          href="/gigs"
-          className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
-        >
-          Ir a Gigs
-        </Link>
+          <Link
+            href="/gigs"
+            className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+          >
+            Ir a Gigs
+          </Link>
 
-        <Link
-          href={`/chat/${gig.id}`}
-          className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-        >
-          Contactar
-        </Link>
+          <Link
+            href={`/chat/${gig.id}`}
+            className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+          >
+            Contactar
+          </Link>
+        </div>
       </div>
     </div>
   );
-}
+          }
