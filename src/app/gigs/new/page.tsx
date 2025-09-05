@@ -24,7 +24,7 @@ export default function NewGigPage() {
   const [category, setCategory] = useState(gigCategories[0])
   const [network, setNetwork] = useState(gigNetworks[0])
 
-  // Aquí podrías obtener el usuario real de contexto o auth
+  // Usuario fijo por ahora; luego puedes reemplazarlo con tu sistema de auth
   const currentUser = 'Kelvin'
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -50,8 +50,8 @@ export default function NewGigPage() {
   return (
     <div className="max-w-xl mx-auto py-10 px-6">
       <h1 className="text-3xl font-semibold mb-6">Publicar un Gig</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
 
+      <form onSubmit={handleSubmit} className="space-y-4">
         {/* Título */}
         <div>
           <label className="block mb-1">Título</label>
@@ -130,4 +130,4 @@ export default function NewGigPage() {
       </form>
     </div>
   )
-    }
+      }
