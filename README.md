@@ -10,7 +10,7 @@ Please check out the documentation below to get started.
 
 ---
 
-## Kellgreat
+## Features
 
 - **Next.js** app router with **TypeScript**
 - **Tailwind CSS** v3 for flexible styling customization
