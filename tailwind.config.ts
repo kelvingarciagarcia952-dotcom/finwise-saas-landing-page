@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Variables CSS existentes  
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",
@@ -18,11 +19,11 @@ const config: Config = {
         "foreground-accent": "var(--foreground-accent)",
         "hero-background": "var(--hero-background)",
 
-        // Paleta extendida
+        // Tu paleta extendida  
         neonGreen: "#39FF14",
         lavenderBlue: "#E0D7FF",
         menuBlack: "#000000",
-        navyBlue: "#001F54",     // fondo azul marino para la interfaz
+        navyBlue: "#001F54",   // fondo azul marino para <main>
       },
     },
   },
