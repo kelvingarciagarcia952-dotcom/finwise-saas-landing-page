@@ -41,10 +41,10 @@ const Header: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white shadow-md">
       <Container className="!px-0">
         <nav className="flex justify-between items-center py-4 px-5">
-          {/* Logo Kellgreat */}
+          {/* Logo Kellgreat (versión blanca) */}
           <Link href="/" className="flex items-center gap-2">
             <img
-              src="/logo-kellgreat.svg"
+              src="/logo-kellgreat-white.svg"
               alt={siteDetails.siteName}
               className="h-8 w-auto"
             />
