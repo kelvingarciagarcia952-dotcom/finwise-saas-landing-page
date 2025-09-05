@@ -12,7 +12,7 @@ import CTA from "@/components/CTA";
 const HomePage: React.FC = () => {
   return (
     <>
-      <Hero />
+      <Kellgreat />
       <Logos />
       <Container>
         <Benefits />
