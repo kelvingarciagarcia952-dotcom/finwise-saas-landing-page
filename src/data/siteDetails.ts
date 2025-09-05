@@ -1,12 +1,15 @@
 export const siteDetails = {
-    siteName: 'Finwise',
-    siteUrl: 'https://finwise-omega.vercel.app/',
-    metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
-    },
-    language: 'en-us',
-    locale: 'en-US',
-    siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "TechStartup"
-    googleAnalyticsId: '', // e.g. G-XXXXXXX,
-}
+  siteName: 'Kellgreat',
+  siteUrl: 'https://tu-subdominio.vercel.app/', // Actualiza con tu URL real
+
+  metadata: {
+    title: 'Kellgreat – Plataforma para freelancers bloqueados',
+    description: 'Kellgreat conecta freelancers bloqueados con clientes sin comisiones ocultas.',
+  },
+
+  language: 'es-ES',
+  locale: 'es-ES',
+
+  siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, 
+  googleAnalyticsId: '', // e.g. G-XXXXXXX
+};
