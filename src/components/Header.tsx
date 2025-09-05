@@ -18,8 +18,8 @@ const Header: React.FC = () => {
 
   const menuItems = [
     { label: 'Inicio', href: '/' },
-    { label: 'Gigs',   href: '/gigs' },
-    { label: 'Chat',   href: '/chat' },
+    { label: 'Gigs', href: '/gigs' },
+    { label: 'Chat', href: '/chat' },
     { label: 'Perfil', href: '/profile', icon: <FaUser className="w-5 h-5 mr-1" /> },
   ];
 
@@ -27,18 +27,18 @@ const Header: React.FC = () => {
   const desktopLink = (href: string) =>
     `${linkBase} ${
       path === href
-        ? 'text-neonGreen font-semibold'
-        : 'text-white hover:text-neonGreen'
+        ? 'text-black font-semibold'
+        : 'text-black hover:text-gray-700'
     }`;
   const mobileLink = (href: string) =>
     `block ${
       path === href
-        ? 'text-neonGreen font-semibold'
-        : 'text-white hover:text-neonGreen'
+        ? 'text-black font-semibold'
+        : 'text-black hover:text-gray-700'
     }`;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-menuBlack shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white shadow-md">
       <Container className="!px-0">
         <nav className="flex justify-between items-center py-4 px-5">
           {/* Logo personalizado */}
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           {/* Botón menú móvil */}
           <button
             onClick={toggleMenu}
-            className="md:hidden bg-menuBlack text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-none"
+            className="md:hidden bg-white text-black rounded-full w-10 h-10 flex items-center justify-center focus:outline-none"
             aria-controls="mobile-menu"
             aria-expanded={isOpen}
           >
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <div id="mobile-menu" className="md:hidden bg-menuBlack shadow-lg">
+        <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
           <ul className="flex flex-col space-y-4 pt-4 pb-6 px-6">
             {menuItems.map(item => (
               <li key={item.href}>
