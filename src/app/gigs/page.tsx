@@ -7,14 +7,34 @@ interface Gig {
   title: string;
   description: string;
   price: string;
+  category: string;
 }
 
 export default function GigsPage() {
-  // Ejemplo de datos estáticos; luego vendrán de tu backend/Blockchain
+  // Datos de ejemplo; más adelante vendrán de tu backend o blockchain
   const gigs: Gig[] = [
-    { id: 1, title: 'Diseño de logo', description: 'Logo profesional en 24h.', price: '10 USDT' },
-    { id: 2, title: 'Desarrollo Web', description: 'Landing page en Next.js.', price: '20 USDT' },
-    { id: 3, title: 'Gestión de redes', description: 'Plan mensual de community manager.', price: '15 USDT' },
+    {
+      id: 1,
+      title: 'Diseño de logo',
+      description: 'Logo profesional en 24h.',
+      price: '10 USDT',
+      category: 'Diseño Gráfico',
+    },
+    {
+      id: 2,
+      title: 'Desarrollo Web',
+      description: 'Landing page en Next.js.',
+      price: '20 USDT',
+      category: 'Desarrollo Web',
+    },
+    {
+      id: 3,
+      title: 'Gestión de redes',
+      description: 'Plan mensual de community manager.',
+      price: '15 USDT',
+      category: 'Marketing Digital',
+    },
+    // Añade más ejemplos aquí si quieres
   ];
 
   return (
@@ -24,6 +44,7 @@ export default function GigsPage() {
         {gigs.map(gig => (
           <li key={gig.id} className="p-4 border rounded-lg">
             <h2 className="text-xl font-semibold">{gig.title}</h2>
+            <p className="mt-1 text-sm text-gray-500">{gig.category}</p>
             <p className="mt-2 text-gray-700">{gig.description}</p>
             <div className="mt-4 flex justify-between items-center">
               <span className="font-semibold">{gig.price}</span>
@@ -47,4 +68,4 @@ export default function GigsPage() {
       </div>
     </div>
   );
-                }
+            }
