@@ -51,11 +51,11 @@ export default function RootLayout({
           <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />
         )}
 
-        {/* Header global (asegúrate de que internamente use `position: fixed` y un z-index alto) */}
         <Header />
 
-        {/* Empuja el contenido hacia abajo para que no quede tapado */}
-        <main className="flex-grow pt-16">
+        {/* Empuja el contenido justo debajo del header fijo 
+            y aplica fondo azul marino */}
+        <main className="flex-grow pt-16 bg-navyBlue">
           {children}
         </main>
 
