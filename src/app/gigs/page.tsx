@@ -10,30 +10,38 @@ interface Gig {
   description: string;
   price: string;
   category: string;
+  username: string;
+  network: string;
 }
 
-// Estos son tus ejemplos estáticos
+// Ejemplos estáticos con usuario y red incluidos
 const staticGigs: Gig[] = [
   {
     id: '1',
     title: 'Diseño de logo',
     description: 'Logo profesional en 24h.',
-    price: '10 USDT',
+    price: '10',
     category: 'Diseño Gráfico',
+    username: 'Admin',
+    network: 'USDT (TRC20)',
   },
   {
     id: '2',
     title: 'Desarrollo Web',
     description: 'Landing page en Next.js.',
-    price: '20 USDT',
+    price: '20',
     category: 'Desarrollo Web',
+    username: 'Admin',
+    network: 'USDT (TRC20)',
   },
   {
     id: '3',
     title: 'Gestión de redes',
     description: 'Plan mensual de community manager.',
-    price: '15 USDT',
+    price: '15',
     category: 'Marketing Digital',
+    username: 'Admin',
+    network: 'USDT (TRC20)',
   },
 ];
 
@@ -41,7 +49,6 @@ export default function GigsPage() {
   const [userGigs, setUserGigs] = useState<Gig[]>([]);
 
   useEffect(() => {
-    // Carga los gigs guardados en localStorage
     const stored = localStorage.getItem('userGigs');
     if (stored) {
       try {
@@ -52,7 +59,6 @@ export default function GigsPage() {
     }
   }, []);
 
-  // Combina primero los gigs de usuario, luego los estáticos
   const allGigs = [...userGigs, ...staticGigs];
 
   return (
@@ -65,11 +71,19 @@ export default function GigsPage() {
         {allGigs.map((gig) => (
           <li key={gig.id} className="p-4 border rounded-lg">
             <h2 className="text-xl font-semibold">{gig.title}</h2>
+            <p className="mt-1 text-sm text-gray-500">
+              Publicado por {gig.username}
+            </p>
             <p className="mt-1 text-sm text-gray-500">{gig.category}</p>
             <p className="mt-2 text-gray-700">{gig.description}</p>
             <div className="mt-4 flex justify-between items-center">
-              <span className="font-semibold">{gig.price}</span>
-              <Link href={`/gigs/${gig.id}`} className="text-indigo-600 hover:underline">
+              <span className="font-semibold">
+                {gig.price} {gig.network}
+              </span>
+              <Link
+                href={`/gigs/${gig.id}`}
+                className="text-indigo-600 hover:underline"
+              >
                 Ver detalles
               </Link>
             </div>
@@ -87,4 +101,4 @@ export default function GigsPage() {
       </div>
     </div>
   );
-}
+    }
