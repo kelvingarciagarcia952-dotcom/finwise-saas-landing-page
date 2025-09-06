@@ -44,7 +44,7 @@ const Header: React.FC = () => {
           {/* Logo Kellgreat colorido estilo Instagram */}
           <Link href="/" className="flex items-center gap-2">
             <img
-              src="/logo-kellgreat-instagram.svg"
+              src="/logo-kellgreat-fiverr.svg"
               alt={siteDetails.siteName}
               className="h-12 w-auto"
             />
@@ -105,11 +105,11 @@ const Header: React.FC = () => {
         leaveFrom="translate-x-0"
         leaveTo="-translate-x-full"
       >
-        <div className="fixed left-0 top-0 h-full w-80 bg-gradient-to-b from-purple-600 via-pink-600 to-red-500 shadow-2xl z-50 md:hidden">
+        <div className="fixed left-0 top-0 h-full w-80 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 shadow-2xl z-50 md:hidden">
           {/* Header del sidebar */}
           <div className="flex items-center justify-between p-6 border-b border-white/20">
             <img
-              src="/logo-kellgreat-instagram.svg"
+              src="/logo-kellgreat-fiverr.svg"
               alt={siteDetails.siteName}
               className="h-10 w-auto"
             />

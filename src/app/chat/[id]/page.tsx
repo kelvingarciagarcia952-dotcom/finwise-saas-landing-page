@@ -45,17 +45,17 @@ export default function ChatPage() {
 
   return (
     <div className="flex flex-col h-screen max-w-md mx-auto bg-white">
-      <header className="flex items-center justify-between p-4 border-b bg-gray-50">
-        <button onClick={() => router.back()} className="text-gray-600 hover:text-gray-800">
+      <header className="flex items-center justify-between p-4 border-b fiverr-gradient text-white shadow-sm">
+        <button onClick={() => router.back()} className="text-white hover:text-gray-200 transition-colors">
           ← Volver
         </button>
-        <h2 className="font-semibold">Chat Gig {gigId}</h2>
-        <Link href="/gigs" className="text-indigo-600 hover:underline">
+        <h2 className="font-semibold text-white">Chat Gig {gigId}</h2>
+        <Link href="/gigs" className="text-white hover:text-gray-200 transition-colors">
           Gigs
         </Link>
       </header>
 
-      <main className="flex-1 overflow-y-auto p-4 pb-24 space-y-3 bg-gray-50">
+      <main className="flex-1 overflow-y-auto p-4 pb-24 space-y-3 bg-gradient-to-b from-gray-50 to-gray-100">
         {messages.length === 0 && (
           <p className="text-center text-gray-400">Aún no hay mensajes.</p>
         )}
@@ -63,10 +63,10 @@ export default function ChatPage() {
           <div
             key={msg.id}
             className={`
-              max-w-xs p-3
+              max-w-xs p-3 shadow-sm
               ${msg.sender === 'client'
-                ? 'bg-indigo-600 text-white self-end rounded-2xl'
-                : 'bg-gray-200 text-gray-800 self-start rounded-2xl'}
+                ? 'bg-gradient-to-r from-green-500 to-green-600 text-white self-end rounded-2xl ml-auto'
+                : 'bg-white text-gray-800 self-start rounded-2xl border border-gray-200'}
             `}
           >
             <p className="text-sm">{msg.text}</p>
@@ -84,17 +84,12 @@ export default function ChatPage() {
           value={input}
           onChange={e => setInput(e.target.value)}
           placeholder="Escribe un mensaje…"
-          className={`
-            w-full pr-14
-            border bg-gray-100
-            rounded-full px-4 py-2
-            focus:outline-none focus:ring-2 focus:ring-indigo-300
-          `}
+          className="w-full pr-14 border border-gray-300 bg-white text-gray-800 rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 placeholder-gray-500 shadow-sm"
         />
 
         <button
           onClick={sendMessage}
-          className="absolute top-1/2 right-6 -translate-y-1/2 text-indigo-600 hover:text-indigo-800 p-1"
+          className="absolute top-1/2 right-6 -translate-y-1/2 text-green-600 hover:text-green-700 p-1 transition-colors"
           aria-label="Enviar mensaje"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 rotate-90" fill="currentColor" viewBox="0 0 20 20">

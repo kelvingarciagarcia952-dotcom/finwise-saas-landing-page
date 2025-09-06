@@ -5,12 +5,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #FED835;
-  --secondary: #304fff;
-
-  --primary-accent: #e5c230;
+  --primary: #00B22D;
+  --secondary: #1dbf73;
+  --accent: #ff6b35;
+  --dark-gray: #404145;
+  --light-gray: #74767e;
+  --fiverr-green: #00B22D;
+  --fiverr-light-green: #1dbf73;
+  --primary-accent: #009025;
   --foreground-accent: #454545;
-  --hero-background: #F3F3F5;
+  --hero-background: #f7f8fc;
 }
 
 html {
@@ -21,7 +25,7 @@ body {
   @apply text-lg;
   
   color: var(--foreground);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+  background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 25%, #f0f2f5 50%, #e8eef4 75%, #ffffff 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   font-family: "Source Sans 3", sans-serif;
@@ -47,8 +51,12 @@ body {
     text-wrap: balance;
   }
   
-  .instagram-gradient {
-    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  .fiverr-gradient {
+    background: linear-gradient(45deg, #00B22D 0%, #1dbf73 25%, #4caf50 50%, #81c784 75%, #a5d6a7 100%);
+  }
+  
+  .fiverr-accent-gradient {
+    background: linear-gradient(45deg, #ff6b35 0%, #ff8c65 50%, #ffad95 100%);
   }
   
   .glass-effect {
