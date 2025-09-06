@@ -1,6 +1,8 @@
+// src/data/siteDetails.ts
+
 export const siteDetails = {
   siteName: 'Kellgreat',
-  siteUrl: 'https://tu-subdominio.vercel.app/', // Actualiza con tu URL real
+  siteUrl: 'https://finwise-saas-landing-page-xi-dun.vercel.app/',
 
   metadata: {
     title: 'Kellgreat – Plataforma para freelancers bloqueados',
@@ -10,6 +12,7 @@ export const siteDetails = {
   language: 'es-ES',
   locale: 'es-ES',
 
-  siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, 
-  googleAnalyticsId: '', // e.g. G-XXXXXXX
+  // Apunta al logo blanco que pusiste en public/
+  siteLogo: `${process.env.BASE_PATH || ''}/logo-kellgreat-white.svg`,
+  googleAnalyticsId: '', // pon aquí tu ID si tienes uno
 };
