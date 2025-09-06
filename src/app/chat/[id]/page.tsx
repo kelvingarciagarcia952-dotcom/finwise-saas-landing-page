@@ -57,7 +57,7 @@ export default function ChatPage() {
 
       <main className="flex-1 overflow-y-auto p-4 pb-24 space-y-3 bg-gradient-to-b from-gray-50 to-gray-100">
         {messages.length === 0 && (
-          <p className="text-center text-gray-400">Aún no hay mensajes.</p>
+          <p className="text-center text-gray-600">Aún no hay mensajes.</p>
         )}
         {messages.map(msg => (
           <div
@@ -78,13 +78,13 @@ export default function ChatPage() {
         <div ref={bottomRef} />
       </main>
 
-      <footer className="relative p-4 border-t bg-white">
+      <footer className="relative p-4 border-t bg-gray-50">
         <input
           type="text"
           value={input}
           onChange={e => setInput(e.target.value)}
           placeholder="Escribe un mensaje…"
-          className="w-full pr-14 border border-gray-300 bg-white text-gray-800 rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 placeholder-gray-500 shadow-sm"
+          className="w-full pr-14 border border-gray-300 bg-white text-gray-800 rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 placeholder-gray-600 shadow-sm"
         />
 
         <button

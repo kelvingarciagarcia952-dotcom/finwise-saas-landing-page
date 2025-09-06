@@ -60,10 +60,10 @@ export default function ChatIndexPage() {
 
   return (
     <div className="max-w-md mx-auto py-10 px-4">
-      <h1 className="text-2xl font-semibold mb-6">Historial de Chat</h1>
+      <h1 className="text-2xl font-semibold mb-6 text-green-700">Historial de Chat</h1>
 
       {sessions.length === 0 ? (
-        <p className="text-center text-gray-500">
+        <p className="text-center text-gray-600">
           No hay historial de chat todavía.
         </p>
       ) : (
@@ -75,13 +75,13 @@ export default function ChatIndexPage() {
                 className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-green-50 hover:border-green-200 transition-all duration-200 shadow-sm"
               >
                 <div>
-                  <p className="font-semibold">{gig.title}</p>
-                  <p className="text-sm text-gray-500">
+                  <p className="font-semibold text-green-700">{gig.title}</p>
+                  <p className="text-sm text-green-600">
                     Con {gig.username}
                   </p>
                 </div>
                 {lastMessage && (
-                  <p className="text-sm text-gray-400 truncate max-w-xs">
+                  <p className="text-sm text-gray-600 truncate max-w-xs">
                     {lastMessage.text}
                   </p>
                 )}
