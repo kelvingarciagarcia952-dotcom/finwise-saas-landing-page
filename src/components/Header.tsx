@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           {/* Botón menú móvil */}
           <button
             onClick={toggleMenu}
-            className="md:hidden bg-white/20 text-white hover:bg-white/30 transition-all duration-200 rounded-full w-12 h-12 flex items-center justify-center focus:outline-none backdrop-blur-sm"
+            className="md:hidden bg-green-500 text-white hover:bg-green-600 transition-all duration-200 rounded-full w-12 h-12 flex items-center justify-center focus:outline-none shadow-lg"
             aria-controls="mobile-menu"
             aria-expanded={isOpen}
           >
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
         leaveTo="opacity-0"
       >
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          className="fixed inset-0 bg-black bg-opacity-80 z-40 md:hidden"
           onClick={toggleMenu}
         />
       </Transition>
@@ -105,9 +105,9 @@ const Header: React.FC = () => {
         leaveFrom="translate-x-0"
         leaveTo="-translate-x-full"
       >
-        <div className="fixed left-0 top-0 h-full w-80 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 shadow-2xl z-50 md:hidden">
+        <div className="fixed left-0 top-0 h-full w-80 bg-white shadow-2xl z-50 md:hidden">
           {/* Header del sidebar */}
-          <div className="flex items-center justify-between p-6 border-b border-white/20">
+          <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gradient-to-r from-green-500 to-green-600">
             <img
               src="/logo-kellgreat-fiverr.svg"
               alt={siteDetails.siteName}
@@ -115,15 +115,15 @@ const Header: React.FC = () => {
             />
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-gray-200 transition-colors"
+              className="text-white hover:text-gray-100 transition-colors"
             >
               <HiOutlineXMark className="w-7 h-7" />
             </button>
           </div>
           
           {/* Menu items */}
-          <nav className="px-6 py-8">
-            <ul className="space-y-6">
+          <nav className="px-6 py-8 bg-white">
+            <ul className="space-y-4">
               {menuItems.map(item => (
                 <li key={item.href}>
                   <Link
@@ -131,14 +131,14 @@ const Header: React.FC = () => {
                     onClick={toggleMenu}
                     className={`flex items-center px-4 py-3 rounded-xl transition-all duration-200 ${
                       path === item.href
-                        ? 'bg-white/20 text-white font-semibold shadow-lg'
-                        : 'text-white/90 hover:bg-white/10 hover:text-white'
+                        ? 'bg-green-500 text-white font-semibold shadow-lg'
+                        : 'text-green-600 hover:bg-green-50 hover:text-green-700'
                     }`}
                   >
-                    <span className="mr-4 text-xl">
+                    <span className="mr-4 text-xl text-green-500">
                       {item.icon || '•'}
                     </span>
-                    <span className="text-lg">{item.label}</span>
+                    <span className="text-lg font-medium">{item.label}</span>
                   </Link>
                 </li>
               ))}
