@@ -46,7 +46,7 @@ const Header: React.FC = () => {
             <img
               src="/logo-kellgreat-white.svg"
               alt={siteDetails.siteName}
-              className="h-8 w-auto"
+              className="h-12 w-auto filter invert"
             />
           </Link>
 
