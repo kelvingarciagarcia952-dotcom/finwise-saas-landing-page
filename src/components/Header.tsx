@@ -27,8 +27,8 @@ const Header: React.FC = () => {
   const desktopLink = (href: string) =>
     `${linkBase} ${
       path === href
-        ? 'text-black font-semibold'
-        : 'text-black hover:text-gray-700'
+        ? 'text-white font-semibold shadow-lg'
+        : 'text-white hover:text-gray-200'
     }`;
   const mobileLink = (href: string) =>
     `block ${
@@ -38,15 +38,15 @@ const Header: React.FC = () => {
     }`;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full glass-effect shadow-2xl">
       <Container className="!px-0">
         <nav className="flex justify-between items-center py-4 px-5">
-          {/* Logo Kellgreat (versión blanca) */}
+          {/* Logo Kellgreat colorido estilo Instagram */}
           <Link href="/" className="flex items-center gap-2">
             <img
-              src="/logo-kellgreat-white.svg"
+              src="/logo-kellgreat-instagram.svg"
               alt={siteDetails.siteName}
-              className="h-12 w-auto filter invert"
+              className="h-12 w-auto"
             />
           </Link>
 
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           {/* Botón menú móvil */}
           <button
             onClick={toggleMenu}
-            className="md:hidden bg-white text-black rounded-full w-10 h-10 flex items-center justify-center focus:outline-none"
+            className="md:hidden bg-white/20 text-white hover:bg-white/30 transition-all duration-200 rounded-full w-12 h-12 flex items-center justify-center focus:outline-none backdrop-blur-sm"
             aria-controls="mobile-menu"
             aria-expanded={isOpen}
           >

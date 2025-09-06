@@ -53,9 +53,8 @@ export default function RootLayout({
 
         <Header />
 
-        {/* Empuja el contenido justo debajo del header fijo
-            y aplica fondo azul marino con texto en blanco */}
-        <main className="flex-grow pt-16 bg-navyBlue text-white">
+        {/* Contenido principal con efecto cristal sobre fondo gradiente */}
+        <main className="flex-grow pt-16 text-white">
           {children}
         </main>
 
