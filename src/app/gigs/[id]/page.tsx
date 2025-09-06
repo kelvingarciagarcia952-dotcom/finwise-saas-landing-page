@@ -15,35 +15,7 @@ interface Gig {
   network: string;
 }
 
-const staticGigs: Gig[] = [
-  {
-    id: '1',
-    title: 'Diseño de logo',
-    description: 'Logo profesional en 24h.',
-    price: '10',
-    category: 'Diseño Gráfico',
-    username: 'Admin',
-    network: 'USDT (TRC20)',
-  },
-  {
-    id: '2',
-    title: 'Desarrollo Web',
-    description: 'Landing page en Next.js.',
-    price: '20',
-    category: 'Desarrollo Web',
-    username: 'Admin',
-    network: 'USDT (TRC20)',
-  },
-  {
-    id: '3',
-    title: 'Gestión de redes',
-    description: 'Plan mensual de community manager.',
-    price: '15',
-    category: 'Marketing Digital',
-    username: 'Admin',
-    network: 'USDT (TRC20)',
-  },
-];
+const staticGigs: Gig[] = [ /* …tus gigs… */ ];
 
 export default function GigDetailPage() {
   const { id } = useParams();
@@ -74,19 +46,12 @@ export default function GigDetailPage() {
     <div className="max-w-2xl mx-auto py-10 px-6">
       <div className="bg-white text-black rounded-lg p-6 space-y-4">
         <h1 className="text-3xl font-bold text-blue-700">{gig.title}</h1>
-
-        <p className="text-sm text-blue-500">
-          Publicado por {gig.username}
-        </p>
-
+        <p className="text-sm text-blue-500">Publicado por {gig.username}</p>
         <p className="text-sm text-blue-500">{gig.category}</p>
-
         <p className="mt-4 text-blue-600">{gig.description}</p>
-
         <span className="block mt-6 text-xl font-semibold text-blue-700">
           {gig.price} {gig.network}
         </span>
-
         <div className="mt-8 flex flex-wrap gap-4">
           <button
             onClick={() => router.back()}
@@ -94,14 +59,12 @@ export default function GigDetailPage() {
           >
             ← Volver
           </button>
-
           <Link
             href="/gigs"
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
           >
             Ir a Gigs
           </Link>
-
           <Link
             href={`/chat/${gig.id}`}
             className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
@@ -112,4 +75,4 @@ export default function GigDetailPage() {
       </div>
     </div>
   );
-          }
+                           }
