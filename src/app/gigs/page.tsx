@@ -63,26 +63,26 @@ export default function GigsPage() {
 
   return (
     <div className="max-w-3xl mx-auto py-10 px-6">
-      <h1 className="text-3xl font-semibold mb-8">Gigs disponibles</h1>
+      <h1 className="text-3xl font-semibold mb-8 text-blue-600">Gigs disponibles</h1>
       <ul className="space-y-6">
         {allGigs.length === 0 && (
-          <li className="text-center text-gray-500">No hay gigs publicados aún.</li>
+          <li className="text-center text-blue-500">No hay gigs publicados aún.</li>
         )}
         {allGigs.map((gig) => (
           <li key={gig.id} className="p-4 border rounded-lg">
-            <h2 className="text-xl font-semibold">{gig.title}</h2>
-            <p className="mt-1 text-sm text-gray-500">
+            <h2 className="text-xl font-semibold text-blue-700">{gig.title}</h2>
+            <p className="mt-1 text-sm text-blue-500">
               Publicado por {gig.username}
             </p>
-            <p className="mt-1 text-sm text-gray-500">{gig.category}</p>
-            <p className="mt-2 text-gray-700">{gig.description}</p>
+            <p className="mt-1 text-sm text-blue-500">{gig.category}</p>
+            <p className="mt-2 text-blue-600">{gig.description}</p>
             <div className="mt-4 flex justify-between items-center">
-              <span className="font-semibold">
+              <span className="font-semibold text-blue-700">
                 {gig.price} {gig.network}
               </span>
               <Link
                 href={`/gigs/${gig.id}`}
-                className="text-indigo-600 hover:underline"
+                className="text-blue-600 hover:text-blue-700 hover:underline transition-colors"
               >
                 Ver detalles
               </Link>
@@ -94,7 +94,7 @@ export default function GigsPage() {
       <div className="mt-8 text-center">
         <Link
           href="/gigs/new"
-          className="px-6 py-3 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-700 transition"
+          className="px-6 py-3 bg-blue-500 text-white rounded-full shadow hover:bg-blue-600 transition-all duration-200"
         >
           Publicar un Gig
         </Link>

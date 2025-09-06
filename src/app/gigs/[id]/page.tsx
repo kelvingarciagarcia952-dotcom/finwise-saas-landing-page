@@ -64,7 +64,7 @@ export default function GigDetailPage() {
 
   if (!gig) {
     return (
-      <div className="p-6 text-center text-white">
+      <div className="p-6 text-center text-blue-600">
         Cargando gig…
       </div>
     );
@@ -73,31 +73,31 @@ export default function GigDetailPage() {
   return (
     <div className="max-w-2xl mx-auto py-10 px-6">
       <div className="bg-white text-black rounded-lg p-6 space-y-4">
-        <h1 className="text-3xl font-bold">{gig.title}</h1>
+        <h1 className="text-3xl font-bold text-blue-700">{gig.title}</h1>
 
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-blue-500">
           Publicado por {gig.username}
         </p>
 
-        <p className="text-sm text-gray-500">{gig.category}</p>
+        <p className="text-sm text-blue-500">{gig.category}</p>
 
-        <p className="mt-4 text-gray-700">{gig.description}</p>
+        <p className="mt-4 text-blue-600">{gig.description}</p>
 
-        <span className="block mt-6 text-xl font-semibold">
+        <span className="block mt-6 text-xl font-semibold text-blue-700">
           {gig.price} {gig.network}
         </span>
 
         <div className="mt-8 flex flex-wrap gap-4">
           <button
             onClick={() => router.back()}
-            className="px-4 py-2 bg-gray-200 text-black rounded hover:bg-gray-300"
+            className="px-4 py-2 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
           >
             ← Volver
           </button>
 
           <Link
             href="/gigs"
-            className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
           >
             Ir a Gigs
           </Link>

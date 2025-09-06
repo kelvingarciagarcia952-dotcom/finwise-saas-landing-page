@@ -50,14 +50,14 @@ export default function NewGigPage() {
   return (
     <div className="max-w-xl mx-auto py-10 px-6">
       {/* Título */}
-      <h1 className="text-3xl font-semibold mb-6 text-white">
+      <h1 className="text-3xl font-semibold mb-6 text-blue-600">
         Publicar un Gig
       </h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Título del Gig */}
         <div>
-          <label className="block mb-1 text-white">Título</label>
+          <label className="block mb-1 text-blue-600 font-medium">Título</label>
           <input
             type="text"
             required
@@ -70,7 +70,7 @@ export default function NewGigPage() {
 
         {/* Descripción */}
         <div>
-          <label className="block mb-1 text-white">Descripción</label>
+          <label className="block mb-1 text-blue-600 font-medium">Descripción</label>
           <textarea
             required
             value={description}
@@ -82,7 +82,7 @@ export default function NewGigPage() {
 
         {/* Precio */}
         <div>
-          <label className="block mb-1 text-white">Precio</label>
+          <label className="block mb-1 text-blue-600 font-medium">Precio</label>
           <input
             type="text"
             required
@@ -95,7 +95,7 @@ export default function NewGigPage() {
 
         {/* Categoría */}
         <div>
-          <label className="block mb-1 text-white">Categoría</label>
+          <label className="block mb-1 text-blue-600 font-medium">Categoría</label>
           <select
             value={category}
             onChange={e => setCategory(e.target.value)}
@@ -111,7 +111,7 @@ export default function NewGigPage() {
 
         {/* Criptomoneda */}
         <div>
-          <label className="block mb-1 text-white">Criptomoneda</label>
+          <label className="block mb-1 text-blue-600 font-medium">Criptomoneda</label>
           <select
             value={network}
             onChange={e => setNetwork(e.target.value)}
@@ -128,7 +128,7 @@ export default function NewGigPage() {
         {/* Botón de envío */}
         <button
           type="submit"
-          className="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition"
+          className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-all duration-200 font-semibold"
         >
           Publicar Gig
         </button>
