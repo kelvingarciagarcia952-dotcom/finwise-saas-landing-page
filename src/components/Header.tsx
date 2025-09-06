@@ -30,12 +30,6 @@ const Header: React.FC = () => {
         ? 'text-white font-semibold shadow-lg'
         : 'text-white hover:text-gray-200'
     }`;
-  const mobileLink = (href: string) =>
-    `block ${
-      path === href
-        ? 'text-black font-semibold'
-        : 'text-black hover:text-gray-700'
-    }`;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full glass-effect shadow-2xl">
@@ -95,7 +89,7 @@ const Header: React.FC = () => {
         />
       </Transition>
 
-      {/* Sidebar lateral izquierdo */}
+      {/* Sidebar lateral */}
       <Transition
         show={isOpen}
         enter="transition-transform duration-300 ease-out"
@@ -106,7 +100,6 @@ const Header: React.FC = () => {
         leaveTo="-translate-x-full"
       >
         <div className="fixed left-0 top-0 h-full w-80 bg-white shadow-2xl z-50 md:hidden">
-          {/* Header del sidebar */}
           <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gradient-to-r from-green-500 to-green-600">
             <img
               src="/logo-kellgreat-fiverr.svg"
@@ -121,7 +114,6 @@ const Header: React.FC = () => {
             </button>
           </div>
           
-          {/* Menu items */}
           <nav className="px-6 py-8 bg-white">
             <ul className="space-y-4">
               {menuItems.map(item => (
