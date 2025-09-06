@@ -14,10 +14,6 @@ const nextConfig = {
       },
     ];
   },
-  // Configure for Replit proxy environment
-  experimental: {
-    allowedHosts: true,
-  },
 };
 
 export default nextConfig;
