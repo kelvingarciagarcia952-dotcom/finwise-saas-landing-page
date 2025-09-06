@@ -72,7 +72,7 @@ export default function ChatIndexPage() {
             <li key={gig.id}>
               <Link
                 href={`/chat/${gig.id}`}
-                className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50"
+                className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-green-50 hover:border-green-200 transition-all duration-200 shadow-sm"
               >
                 <div>
                   <p className="font-semibold">{gig.title}</p>

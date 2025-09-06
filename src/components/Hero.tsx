@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center pb-0 pt-32 md:pt-40 px-5 bg-navyBlue text-white"
+      className="relative flex items-center justify-center pb-0 pt-32 md:pt-40 px-5 text-gray-800"
     >
       {/* Fondo y efectos intactos */}
       <div className="absolute left-0 top-0 bottom-0 -z-10 w-full">
@@ -23,7 +23,9 @@ const Hero: React.FC = () => {
 
       <div className="text-center">
         <h1 className="text-4xl md:text-6xl md:leading-tight font-bold max-w-lg md:max-w-2xl mx-auto">
-          Kellgreat
+          <span className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 bg-clip-text text-transparent drop-shadow-lg">
+            Kellgreat
+          </span>
         </h1>
         <p className="mt-4 max-w-lg mx-auto">
           Conecta freelancers bloqueados con clientes, sin comisiones ocultas ni sorpresas.
@@ -32,7 +34,7 @@ const Hero: React.FC = () => {
         <div className="mt-6">
           <a
             href="/gigs"
-            className="px-8 py-3 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-700 transition"
+            className="px-8 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-200 transform hover:scale-105"
           >
             Explorar Gigs
           </a>
