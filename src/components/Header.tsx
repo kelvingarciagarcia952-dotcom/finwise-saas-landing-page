@@ -79,31 +79,71 @@ const Header: React.FC = () => {
         </nav>
       </Container>
 
-      {/* Menú móvil */}
+      {/* Overlay para cerrar sidebar */}
       <Transition
         show={isOpen}
-        enter="transition ease-out duration-200 transform"
-        enterFrom="opacity-0 scale-95"
-        enterTo="opacity-100 scale-100"
-        leave="transition ease-in duration-75 transform"
-        leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-95"
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
       >
-        <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
-          <ul className="flex flex-col space-y-4 pt-4 pb-6 px-6">
-            {menuItems.map(item => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={toggleMenu}
-                  className={mobileLink(item.href)}
-                >
-                  {item.icon}
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={toggleMenu}
+        />
+      </Transition>
+
+      {/* Sidebar lateral izquierdo */}
+      <Transition
+        show={isOpen}
+        enter="transition-transform duration-300 ease-out"
+        enterFrom="-translate-x-full"
+        enterTo="translate-x-0"
+        leave="transition-transform duration-300 ease-in"
+        leaveFrom="translate-x-0"
+        leaveTo="-translate-x-full"
+      >
+        <div className="fixed left-0 top-0 h-full w-80 bg-gradient-to-b from-purple-600 via-pink-600 to-red-500 shadow-2xl z-50 md:hidden">
+          {/* Header del sidebar */}
+          <div className="flex items-center justify-between p-6 border-b border-white/20">
+            <img
+              src="/logo-kellgreat-instagram.svg"
+              alt={siteDetails.siteName}
+              className="h-10 w-auto"
+            />
+            <button
+              onClick={toggleMenu}
+              className="text-white hover:text-gray-200 transition-colors"
+            >
+              <HiOutlineXMark className="w-7 h-7" />
+            </button>
+          </div>
+          
+          {/* Menu items */}
+          <nav className="px-6 py-8">
+            <ul className="space-y-6">
+              {menuItems.map(item => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={toggleMenu}
+                    className={`flex items-center px-4 py-3 rounded-xl transition-all duration-200 ${
+                      path === item.href
+                        ? 'bg-white/20 text-white font-semibold shadow-lg'
+                        : 'text-white/90 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    <span className="mr-4 text-xl">
+                      {item.icon || '•'}
+                    </span>
+                    <span className="text-lg">{item.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </Transition>
     </header>
