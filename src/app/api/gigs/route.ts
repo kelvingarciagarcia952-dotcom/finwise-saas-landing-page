@@ -1,6 +1,6 @@
 // src/app/api/gigs/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '../../../../lib/supabaseClient';
+import { supabase } from '@/lib/supabaseClient';
 
 export async function GET() {
   // Lee todos los gigs ordenados por fecha de creación
